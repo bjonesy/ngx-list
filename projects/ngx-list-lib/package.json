@@ -1,6 +1,6 @@
 {
   "name": "@binnovative/ngx-list",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A material select list using NGXS",
   "author": "Brandon Jones <brandon.jones1985@gmail.com>",
   "license": "MIT",
