@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { NgxListLibModule } from '@bi/ngx-list';
+import { NgxListLibModule } from '@binnovative/ngx-list';
 
 @NgModule({
   declarations: [],

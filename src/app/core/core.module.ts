@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { SelectionListState } from '@bi/ngx-list';
+import { SelectionListState } from '@binnovative/ngx-list';
 import { NgxsModule } from '@ngxs/store';
 
 @NgModule({

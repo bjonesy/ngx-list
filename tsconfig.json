@@ -14,7 +14,7 @@
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2018", "dom"],
     "paths": {
-      "@bi/ngx-list": ["dist/ngx-list-lib"],
+      "@binnovative/ngx-list": ["dist/ngx-list-lib"],
       "ngx-list-lib/*": ["dist/ngx-list-lib/*"]
     }
   }

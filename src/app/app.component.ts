@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { SelectionListState } from '@bi/ngx-list';
+import { SelectionListState } from '@binnovative/ngx-list';
 import { Select, Store } from '@ngxs/store';
 
 @Component({
