@@ -1,0 +1,17 @@
+<!-- Checkbox Theme -->
+<ng-container *ngIf="checkboxTheme; else defaultTheme">
+  <mat-selection-list #list (selectionChange)="onGroupsChange(list.selectedOptions.selected)">
+    <mat-list-option *ngFor="let listItem of listItems" [value]="listItem">
+      <ngx-list-item> {{ listItem }} </ngx-list-item>
+    </mat-list-option>
+  </mat-selection-list>
+</ng-container>
+
+<!-- Default Theme -->
+<ng-template #defaultTheme>
+  <mat-list role="list">
+    <mat-list-item *ngFor="let listItem of listItems" role="listitem">
+      <ngx-list-item>{{ listItem }}</ngx-list-item>
+    </mat-list-item>
+  </mat-list>
+</ng-template>

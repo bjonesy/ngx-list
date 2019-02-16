@@ -1,0 +1,24 @@
+{
+  "name": "@bi/ngx-list",
+  "version": "1.0.0",
+  "description": "A material select list using NGXS",
+  "author": "Brandon Jones <brandon.jones1985@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bjonesy/ngx-list.git"
+  },
+  "keywords": [
+    "angular",
+    "ngxs"
+  ],
+  "peerDependencies": {
+    "@angular/animations": "^7.2.1",
+    "@angular/cdk": "^7.2.1",
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0",
+    "@angular/material": "^7.2.1",
+    "@ngxs/store": "^3.3.4",
+    "rxjs": "^6.3.3"
+  }
+}
