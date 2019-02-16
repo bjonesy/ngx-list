@@ -8,7 +8,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 NGXS is a peer dependency. It must be installed as well. `npm i @ngxs/store`.
 
-`npm i ngx-list`
+`npm i @binnovative/ngx-list`
 
 Include in any module of your choice.
 
