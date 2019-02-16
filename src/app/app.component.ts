@@ -1,6 +1,7 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 import { SelectionListState } from '@bi/ngx-list';
 import { Select, Store } from '@ngxs/store';
@@ -10,20 +11,27 @@ import { Select, Store } from '@ngxs/store';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   typesOfShoes = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
   newArray: Array<any>;
 
-  @ViewChild('newListParent') newListParent: ElementRef;
-  @ViewChild('newList') newList: ElementRef;
-
   @Select(SelectionListState) listItems$: Observable<Array<any>>;
 
-  constructor(private store: Store) {}
+  private readonly dispose = new Subject<void>();
+
+  constructor(private readonly store: Store) {}
 
   ngOnInit(): void {
-    this.store.subscribe(o => {
-      this.newArray = o.selectionList;
-    });
+    this.store
+      .select(SelectionListState)
+      .pipe(takeUntil(this.dispose))
+      .subscribe(o => {
+        this.newArray = o;
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.dispose.next();
+    this.dispose.complete();
   }
 }
