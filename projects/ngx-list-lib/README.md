@@ -1,4 +1,4 @@
-# Ngx List
+# ngx-list
 
 A simple material select list that uses NGXS.
 
