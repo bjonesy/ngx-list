@@ -1,10 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { SelectionListState } from '@binnovative/ngx-list';
 import { Select, Store } from '@ngxs/store';
+import { auth } from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +21,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private readonly dispose = new Subject<void>();
 
-  constructor(private readonly store: Store) {}
+  constructor(public afAuth: AngularFireAuth, private readonly store: Store) {}
 
   ngOnInit(): void {
     this.store
@@ -33,5 +35,19 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.dispose.next();
     this.dispose.complete();
+  }
+
+  login(): void {
+    // tslint:disable-next-line: no-floating-promises
+    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+  }
+
+  logout(): void {
+    // tslint:disable-next-line: no-floating-promises
+    this.afAuth.auth.signOut();
+  }
+
+  submit(): void {
+    console.log(this.newArray);
   }
 }

@@ -12,9 +12,9 @@ export class SelectionListState {
   constructor() {}
 
   @Action(SelectListItem) selectListItem(
-    { getState, setState }: StateContext<Array<any>>,
-    { payload }
+    { setState }: StateContext<Array<any>>,
+    action: SelectListItem
   ): Observable<any> {
-    return setState([...getState(), payload]);
+    return setState([action.payload]);
   }
 }
