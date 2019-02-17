@@ -1,6 +1,6 @@
 # ngx-list
 
-A simple material select list that uses NGXS.
+A list component that can be used to display a list of items or a list of items to be selected.
 
 ## Installation
 
@@ -8,7 +8,7 @@ NGXS and Angular Material are a peer dependencies. They must be installed as wel
 
 `npm i @binnovative/ngx-list`
 
-Include in any module of your choice.
+Include in a shared or core module in your app.
 
 ```
 import { CommonModule } from '@angular/common';
@@ -42,7 +42,7 @@ export class ExampleModule {}
 
 ### How to use
 
-Pass in an array of list items to the `ngx-list` component and theme to use if desired.
+Pass in an array of list items to the `ngx-list` component and a theme to use.
 
 ```
 <ngx-list theme="theme" [listItems]="listItems"></ngx-list>
