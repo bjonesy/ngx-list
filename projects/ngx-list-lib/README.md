@@ -4,7 +4,7 @@ A simple material select list that uses NGXS.
 
 ## Installation
 
-NGXS is a peer dependency. It must be installed as well. `npm i @ngxs/store`.
+NGXS and Angular Material are a peer dependencies. They must be installed as well. `npm i @angular/material @angular/cdk @angular/animations @ngxs/store`.
 
 `npm i @binnovative/ngx-list`
 
